@@ -1178,7 +1178,8 @@ MonoBehaviour:
   _carTransform: {fileID: 1089491373}
   _visualTransform: {fileID: 37291465}
   _carRigidbody: {fileID: 1089491374}
-  timeRotating: 1
+  _deltaCarRotation: 90
+  _deltaVisualRotation: 35
 --- !u!65 &1089491376
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1454,7 +1455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcf13ab55d4bc4449f039135cc74a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 16.5
+  speed: 16
   rotatingSpeed: 4
 --- !u!4 &1171597076
 Transform:
@@ -1765,7 +1766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcf13ab55d4bc4449f039135cc74a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 16.5
+  speed: 16
   rotatingSpeed: 4
 --- !u!4 &1718628517
 Transform:

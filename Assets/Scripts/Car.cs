@@ -6,10 +6,10 @@ public class Car : MonoBehaviour
     [SerializeField] private Transform _visualTransform;
     [SerializeField] private Rigidbody _carRigidbody;
 
-    private float _speed = 14f;
+    private float _speed = 15f;
 
-    private float _deltaCarRotation = 90f;
-    private float _deltaVisualRotation = 45f;
+    [SerializeField] private float _deltaCarRotation = 90f;
+    [SerializeField] private float _deltaVisualRotation = 45f;
 
     private float _carRotation = 0f;
     private float _visualRotation = 0f;
@@ -31,11 +31,21 @@ public class Car : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
+            if(_visualRotation > 0)
+            {
+                _visualRotation *= 0.65f;
+            }
+
             _carRotation -= _deltaCarRotation * Time.deltaTime;
             _visualRotation -= _deltaVisualRotation * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.D))
         {
+            if (_visualRotation < 0)
+            {
+                _visualRotation *= 0.65f;
+            }
+
             _carRotation += _deltaCarRotation * Time.deltaTime;
             _visualRotation += _deltaVisualRotation * Time.deltaTime;
         }
@@ -43,7 +53,6 @@ public class Car : MonoBehaviour
         {
             _visualRotation *= 0.95f;
         }
-        _visualRotation = Mathf.Clamp(_visualRotation, -90f, 90f);
-        if (_visualRotation < 1f) { _visualRotation = 0f; }
+        _visualRotation = Mathf.Clamp(_visualRotation, -60f, 60f);
     }
 }
