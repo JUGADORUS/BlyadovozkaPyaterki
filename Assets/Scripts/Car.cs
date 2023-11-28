@@ -14,7 +14,21 @@ public class Car : MonoBehaviour
     private float _carRotation = 0f;
     private float _visualRotation = 0f;
 
-    private void Start()
+    public static Car Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+        private void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -31,9 +45,9 @@ public class Car : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            if(_visualRotation > 0)
+            if (_visualRotation > 0)
             {
-                _visualRotation *= 0.65f;
+                _visualRotation *= 0.99f;
             }
 
             _carRotation -= _deltaCarRotation * Time.deltaTime;
@@ -43,7 +57,7 @@ public class Car : MonoBehaviour
         {
             if (_visualRotation < 0)
             {
-                _visualRotation *= 0.65f;
+                _visualRotation *= 0.99f;
             }
 
             _carRotation += _deltaCarRotation * Time.deltaTime;

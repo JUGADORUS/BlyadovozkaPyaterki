@@ -13,16 +13,27 @@ public class PoliceChase : MonoBehaviour
     private void Start()
     {
         policeCar = GetComponent<Rigidbody>();
+
+        if (target == null)
+        {
+            target = Car.Instance.gameObject;
+            return;
+        }
+    }
+
+    private void Awake()
+    {
+        policeCar = GetComponent<Rigidbody>();
+
+        if (target == null)
+        {
+            target = Car.Instance.gameObject;
+            return;
+        }
     }
 
     private void FixedUpdate()
     {
-        if(target == null)
-        {
-            target = GameObject.FindGameObjectWithTag("Player");
-            return;
-        }
-
         Vector3 pointTarget = transform.position - target.transform.position;
         pointTarget.Normalize();
 
@@ -30,5 +41,7 @@ public class PoliceChase : MonoBehaviour
 
         policeCar.angularVelocity = rotatingSpeed * value * new Vector3(0, 1, 0);
         policeCar.velocity = transform.forward * speed;
+        Debug.Log(policeCar.angularVelocity);
+        //Debug.Log(target);
     }
 }
