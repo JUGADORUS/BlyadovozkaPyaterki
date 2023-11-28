@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarDeath : Car
+public class CarDeath : MonoBehaviour
 {
     [SerializeField] Car car;
     public int Health = 3;

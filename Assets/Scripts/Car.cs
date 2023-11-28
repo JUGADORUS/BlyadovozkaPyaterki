@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CarMove : Car
+public class Car : MonoBehaviour
 {
     [SerializeField] private Transform _carTransform;
     [SerializeField] private Transform _visualTransform;
