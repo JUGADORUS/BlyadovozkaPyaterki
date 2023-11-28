@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CarDeath : Car
 {
-    [SerializeField] Car car;
     public int Health = 3;
 
     private void OnCollisionEnter(Collision collision)
@@ -21,6 +20,16 @@ public class CarDeath : Car
             if(Health <= 0)
             {
                Destroy(gameObject);
+            }
+        }
+
+        if (collision.gameObject.GetComponent<PoliceChase>())
+        {
+            Health--;
+
+            if (Health <= 0)
+            {
+                Destroy(gameObject);
             }
         }
     }
