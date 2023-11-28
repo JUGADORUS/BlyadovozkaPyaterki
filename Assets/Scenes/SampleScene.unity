@@ -959,7 +959,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
@@ -976,11 +976,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3daaf4aca5ff64fbd7adeef1f2907e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visualTransform: {fileID: 37291465}
   _carTransform: {fileID: 1089491373}
-  _speed: 14
-  _sensetivity: 0.3
-  _visualSensetivity: 0
+  _visualTransform: {fileID: 37291465}
   _carRigidbody: {fileID: 1089491374}
   timeRotating: 1
 --- !u!65 &1089491376

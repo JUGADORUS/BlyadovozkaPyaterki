@@ -1,16 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CarMove : Car
 {
-    [SerializeField] private Transform _visualTransform;
     [SerializeField] private Transform _carTransform;
-    [SerializeField] private float _speed = 5f;
-    [SerializeField] private float _sensetivity = 1f;
-    [SerializeField] private float _visualSensetivity = 1f;
+    [SerializeField] private Transform _visualTransform;
     [SerializeField] private Rigidbody _carRigidbody;
-    [SerializeField] private float timeRotating = 1f;
+
+    private float _speed = 14f;
+
+    private float _deltaCarRotation = 90f;
+    private float _deltaVisualRotation = 45f;
+
+    private float _carRotation = 0f;
+    private float _visualRotation = 0f;
 
     private void Start()
     {
@@ -24,35 +26,24 @@ public class CarMove : Car
 
         forwardSpeed = transform.forward * _speed;
         _carRigidbody.velocity = forwardSpeed;
+        _carTransform.localEulerAngles = new Vector3(0, _carRotation, 0);
+        _visualTransform.localEulerAngles = new Vector3(0, _visualRotation, 0);
 
         if (Input.GetKey(KeyCode.A))
         {
-            _visualTransform.localEulerAngles += new Vector3(0, (-1f * _visualSensetivity), 0);
-            _carTransform.localEulerAngles += new Vector3(0, -1f * _sensetivity, 0);
+            _carRotation -= _deltaCarRotation * Time.deltaTime;
+            _visualRotation -= _deltaVisualRotation * Time.deltaTime;
         }
-
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
-            _visualTransform.localEulerAngles += new Vector3(0, (1f * _visualSensetivity), 0);
-            _carTransform.localEulerAngles += new Vector3(0, 1f * _sensetivity, 0);
+            _carRotation += _deltaCarRotation * Time.deltaTime;
+            _visualRotation += _deltaVisualRotation * Time.deltaTime;
         }
-
-        //else
-        //{
-        //    StartCoroutine(CarVisualRotateToDefaultProcess());
-        //}
-    }
-
-    private IEnumerator CarVisualRotateToDefaultProcess()
-    {
-        Vector3 startRotation = _visualTransform.transform.rotation.eulerAngles;
-
-        for (float t = 0; t < 1f; t += Time.deltaTime / timeRotating)
+        else
         {
-            float rotation = Mathf.Lerp(_visualTransform.rotation.y, 0f, 10);
-            _visualTransform.localEulerAngles = new Vector3(0, rotation, 0);
-            //_visualTransform.transform.up. = Vector3.Lerp(startRotation, Vector3.zero, t);
-            yield return null;
+            _visualRotation *= 0.95f;
         }
+        _visualRotation = Mathf.Clamp(_visualRotation, -90f, 90f);
+        if (_visualRotation < 1f) { _visualRotation = 0f; }
     }
 }
