@@ -14,6 +14,8 @@ public class Car : MonoBehaviour
     private float _carRotation = 0f;
     private float _visualRotation = 0f;
 
+    public int CoinsCollected = 0;
+
     private void Start()
     {
         Cursor.visible = false;
@@ -22,30 +24,15 @@ public class Car : MonoBehaviour
 
     void Update()
     {
-        Vector3 forwardSpeed;
-
-        forwardSpeed = transform.forward * _speed;
-        _carRigidbody.velocity = forwardSpeed;
-        _carTransform.localEulerAngles = new Vector3(0, _carRotation, 0);
-        _visualTransform.localEulerAngles = new Vector3(0, _visualRotation, 0);
-
         if (Input.GetKey(KeyCode.A))
         {
-            if(_visualRotation > 0)
-            {
-                _visualRotation *= 0.65f;
-            }
-
+            if (_visualRotation > 0) _visualRotation *= 0.65f;
             _carRotation -= _deltaCarRotation * Time.deltaTime;
             _visualRotation -= _deltaVisualRotation * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            if (_visualRotation < 0)
-            {
-                _visualRotation *= 0.65f;
-            }
-
+            if (_visualRotation < 0) _visualRotation *= 0.65f;
             _carRotation += _deltaCarRotation * Time.deltaTime;
             _visualRotation += _deltaVisualRotation * Time.deltaTime;
         }
@@ -54,5 +41,20 @@ public class Car : MonoBehaviour
             _visualRotation *= 0.95f;
         }
         _visualRotation = Mathf.Clamp(_visualRotation, -60f, 60f);
+
+        Vector3 speed;
+        speed = transform.forward * _speed;
+        _carRigidbody.velocity = speed;
+        _carTransform.localEulerAngles = new Vector3(0, _carRotation, 0);
+        _visualTransform.localEulerAngles = new Vector3(0, _visualRotation, 0);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<Coin>() is Coin coin)
+        {
+            coin.Collect();
+            CoinsCollected += 1;
+        }
     }
 }
