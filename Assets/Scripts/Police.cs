@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoliceChase : MonoBehaviour
+public class Police : MonoBehaviour
 {
     [SerializeField] private float speed = 16;
     [SerializeField] private float rotatingSpeed = 8;
@@ -16,32 +16,21 @@ public class PoliceChase : MonoBehaviour
 
     Vector3 driftAngle = new Vector3(0, 1.6f , 0);
 
-    private void Start()
+    private void Awake()
     {
         policeCar = GetComponent<Rigidbody>();
 
-        if (target == null)
+        if (target == null && Car.Instance.gameObject != null)
         {
             target = Car.Instance.gameObject;
             return;
         }
     }
 
-    private void Awake()
-    {
-        policeCar = GetComponent<Rigidbody>();  
-    }
-
     private void FixedUpdate()
     {
-        if (MenuManager.Instance == true)
+        if (MenuManager.GameActive == true)
         {
-            if (target == null)
-            {
-                target = Car.Instance.gameObject;
-                return;
-            }
-
             if (Mathf.Abs(policeCar.angularVelocity.y) > Mathf.Abs(driftAngle.y))
             {
                 if (policeCar.angularVelocity.y > Vector3.zero.y)

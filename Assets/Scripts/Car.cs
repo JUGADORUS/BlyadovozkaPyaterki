@@ -30,7 +30,7 @@ public class Car : MonoBehaviour
 
     private void Start()
     {
-        if (MenuManager.Instance == true)
+        if (MenuManager.GameActive == true)
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
@@ -39,7 +39,18 @@ public class Car : MonoBehaviour
 
     void Update()
     {
-        if (MenuManager.Instance == true)
+        Debug.Log(_carRigidbody.velocity);
+        //реяр
+        //Debug.Log(_carRigidbody.velocity);
+        //if (_carRigidbody.velocity == Vector3.zero)
+        //{
+        //    Debug.Log("рш кну");
+        //    _carTransform.localEulerAngles = new Vector3(0, 0, 0);
+        //    _visualTransform.localEulerAngles = new Vector3(0, 0, 0);
+        //}
+        //реяр
+
+        if (MenuManager.GameActive == true)
         {
             Vector3 forwardSpeed;
 

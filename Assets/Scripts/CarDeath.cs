@@ -10,7 +10,7 @@ public class CarDeath : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<UnbreakableObject>())
         {
-            Destroy(gameObject);
+            Die();
         }
 
         if (collision.gameObject.GetComponent<BreakableObject>())
@@ -19,23 +19,38 @@ public class CarDeath : MonoBehaviour
 
             if(Health <= 0)
             {
-               Destroy(gameObject);
+               Die();
             }
         }
 
-        if (collision.gameObject.GetComponent<PoliceChase>())
+        if (collision.gameObject.GetComponent<Police>())
         {
             Health--;
 
             if (Health <= 0)
             {
-                Destroy(gameObject);
+                Die();
             }
         }
 
         if (collision.gameObject.GetComponent<Car>())
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        if (gameObject.GetComponent<Car>())
+        {
+            MenuManager.Instance.TurnOnMenu();
+            Health = 3;
+
+            GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            transform.position = MenuManager.Instance.transform.position;
+            return;
+        }
+        Destroy(gameObject);
     }
 }

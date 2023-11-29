@@ -4,18 +4,38 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] GameObject MenuUI;
-    public static bool Instance;
-
+    [SerializeField] public GameObject MenuUI;
+    public static bool GameActive;
+    public static MenuManager Instance;
+    [SerializeField] private Car Player;
 
     private void Start()
     {
-        Instance = false;
+        GameActive = false;
+    }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void StartGame()
     {
-        Instance = true;
+        GameActive = true;
         MenuUI.SetActive(false);
+    }
+
+    public void TurnOnMenu()
+    {
+        GameActive = false;
+        MenuUI.SetActive(true);
+        //Instantiate(Player, transform.position, Quaternion.identity);
     }
 }
