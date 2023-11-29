@@ -32,5 +32,10 @@ public class CarDeath : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if (collision.gameObject.GetComponent<Car>())
+        {
+            Destroy(gameObject);
+        }
     }
 }

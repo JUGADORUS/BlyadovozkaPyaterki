@@ -28,45 +28,51 @@ public class Car : MonoBehaviour
         }
     }
 
-        private void Start()
+    private void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        if (MenuManager.Instance == true)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     void Update()
     {
-        Vector3 forwardSpeed;
-
-        forwardSpeed = transform.forward * _speed;
-        _carRigidbody.velocity = forwardSpeed;
-        _carTransform.localEulerAngles = new Vector3(0, _carRotation, 0);
-        _visualTransform.localEulerAngles = new Vector3(0, _visualRotation, 0);
-
-        if (Input.GetKey(KeyCode.A))
+        if (MenuManager.Instance == true)
         {
-            if (_visualRotation > 0)
+            Vector3 forwardSpeed;
+
+            forwardSpeed = transform.forward * _speed;
+            _carRigidbody.velocity = forwardSpeed;
+            _carTransform.localEulerAngles = new Vector3(0, _carRotation, 0);
+            _visualTransform.localEulerAngles = new Vector3(0, _visualRotation, 0);
+
+            if (Input.GetKey(KeyCode.A))
             {
-                _visualRotation *= 0.99f;
-            }
+                if (_visualRotation > 0)
+                {
+                    _visualRotation *= 0.99f;
+                }
 
-            _carRotation -= _deltaCarRotation * Time.deltaTime;
-            _visualRotation -= _deltaVisualRotation * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            if (_visualRotation < 0)
+                _carRotation -= _deltaCarRotation * Time.deltaTime;
+                _visualRotation -= _deltaVisualRotation * Time.deltaTime;
+            }
+            else if (Input.GetKey(KeyCode.D))
             {
-                _visualRotation *= 0.99f;
-            }
+                if (_visualRotation < 0)
+                {
+                    _visualRotation *= 0.99f;
+                }
 
-            _carRotation += _deltaCarRotation * Time.deltaTime;
-            _visualRotation += _deltaVisualRotation * Time.deltaTime;
+                _carRotation += _deltaCarRotation * Time.deltaTime;
+                _visualRotation += _deltaVisualRotation * Time.deltaTime;
+            }
+            else
+            {
+                _visualRotation *= 0.95f;
+            }
+            _visualRotation = Mathf.Clamp(_visualRotation, -60f, 60f);
         }
-        else
-        {
-            _visualRotation *= 0.95f;
-        }
-        _visualRotation = Mathf.Clamp(_visualRotation, -60f, 60f);
     }
 }

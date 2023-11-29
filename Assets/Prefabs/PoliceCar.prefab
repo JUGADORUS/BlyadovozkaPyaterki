@@ -50,6 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 16
   rotatingSpeed: 4
+  _visualTransform: {fileID: 126198853120672179}
+  _deltaVisualRotation: 45
 --- !u!54 &6951915570162283395
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -96,8 +98,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5570993, y: 0.86178213, z: 3.5523791}
-  m_Center: {x: 0.002264516, y: 0.2729234, z: -0.01984401}
+  m_Size: {x: 1.5570993, y: 0.86178213, z: 3.7436082}
+  m_Center: {x: 0.002264516, y: 0.2729234, z: -0.012733956}
 --- !u!114 &2480290722177738528
 MonoBehaviour:
   m_ObjectHideFlags: 0
