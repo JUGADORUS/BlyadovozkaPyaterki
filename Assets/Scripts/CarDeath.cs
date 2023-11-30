@@ -43,12 +43,16 @@ public class CarDeath : MonoBehaviour
     {
         if (gameObject.GetComponent<Car>())
         {
+            Car.Instance._carRotation = 0;
+            Car.Instance._visualRotation = 0;
+
             MenuManager.Instance.TurnOnMenu();
             Health = 3;
 
             GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             transform.position = MenuManager.Instance.transform.position;
+            transform.rotation = MenuManager.Instance.transform.rotation;
             return;
         }
         Destroy(gameObject);

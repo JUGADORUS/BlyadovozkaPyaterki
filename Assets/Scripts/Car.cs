@@ -11,8 +11,8 @@ public class Car : MonoBehaviour
     [SerializeField] private float _deltaCarRotation = 90f;
     [SerializeField] private float _deltaVisualRotation = 45f;
 
-    private float _carRotation = 0f;
-    private float _visualRotation = 0f;
+    public float _carRotation = 0f; //œŒÃ≈ÕﬂÀ Õ¿ œ¿¡À» 
+    public float _visualRotation = 0f;
 
     public static Car Instance;
 
@@ -39,16 +39,6 @@ public class Car : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(_carRigidbody.velocity);
-        //“≈—“
-        //Debug.Log(_carRigidbody.velocity);
-        //if (_carRigidbody.velocity == Vector3.zero)
-        //{
-        //    Debug.Log("“€ ÀŒ’");
-        //    _carTransform.localEulerAngles = new Vector3(0, 0, 0);
-        //    _visualTransform.localEulerAngles = new Vector3(0, 0, 0);
-        //}
-        //“≈—“
 
         if (MenuManager.GameActive == true)
         {
