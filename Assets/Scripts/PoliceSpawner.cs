@@ -9,12 +9,15 @@ public class PoliceSpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        time += Time.deltaTime;
-
-        if(time > 10f)
+        if (MenuManager.GameActive == true)
         {
-            Instantiate(PoliceCar, transform.position, Quaternion.identity);
-            time = 0f;
-        }    
+            time += Time.deltaTime;
+
+            if (time > 10f)
+            {
+                Instantiate(PoliceCar, transform.position, Quaternion.identity);
+                time = 0f;
+            }
+        }
     }
 }

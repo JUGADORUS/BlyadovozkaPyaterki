@@ -7,12 +7,14 @@ public class ProgressData
 {
     public int Score;
     public int Coins;
+    public int BestScore;
 }
 
 public class Progress : MonoBehaviour
 {
     public int Score;
     public int Coins;
+    public int BestScore;
 
     public static Progress Instance;
 
@@ -30,10 +32,16 @@ public class Progress : MonoBehaviour
         }
     }
 
-    public void SetLevel(int score)
+    public void AddScore(int score)
     {
-        Score = score;
+        Score += score;
+
         Save();
+    }
+
+    public void SaveBestScore(int bestScore)
+    {
+        BestScore = bestScore;
     }
 
     public void AddCoins(int value)
@@ -42,16 +50,12 @@ public class Progress : MonoBehaviour
         Save();
     }
 
-    public int ReturnCoins()
-    {
-        return Coins;
-    }
-
     private void Save()
     {
         ProgressData progressData = new ProgressData();
         progressData.Score = Score;
         progressData.Coins = Coins;
+        progressData.BestScore = BestScore;
 
         string json = JsonUtility.ToJson(progressData);
         PlayerPrefs.SetString("Progress", json);
@@ -65,6 +69,7 @@ public class Progress : MonoBehaviour
             ProgressData progressData = JsonUtility.FromJson<ProgressData>(json);
             Score = progressData.Score;
             Coins = progressData.Coins;
+            BestScore = progressData.BestScore;
         }
     }
 }

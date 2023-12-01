@@ -12,8 +12,12 @@ public class CoinManager : MonoBehaviour
     [SerializeField] private float timerMin;
     [SerializeField] private float timerMax;
     [SerializeField] private TMP_Text amountCoins;
+    [SerializeField] private TMP_Text amountScore;
+    [SerializeField] private TMP_Text bestScore;
 
     public static CoinManager Instance;
+
+    private float time;
 
     private void Awake()
     {
@@ -25,6 +29,8 @@ public class CoinManager : MonoBehaviour
     {
         StartCoroutine(SpawnCoins());
         amountCoins.text = Progress.Instance.Coins.ToString();
+        amountScore.text = Progress.Instance.Score.ToString();
+        bestScore.text = "Лучший: " + Progress.Instance.BestScore.ToString();
     }
 
     IEnumerator SpawnCoins()
@@ -33,12 +39,15 @@ public class CoinManager : MonoBehaviour
         {
             if (_activeCoins < 10)
             {
-                float wait = Random.Range(timerMin, timerMax);
-                yield return new WaitForSeconds(wait);
-                Vector3 position = GeneratePosition();
-                while (Physics.CheckSphere(position, 0.75f)) position = GeneratePosition();
-                Instantiate(_coinPrefab, position, Quaternion.identity);
-                _activeCoins++;
+                if (MenuManager.GameActive == true)
+                {
+                    float wait = Random.Range(timerMin, timerMax);
+                    yield return new WaitForSeconds(wait);
+                    Vector3 position = GeneratePosition();
+                    while (Physics.CheckSphere(position, 0.75f)) position = GeneratePosition();
+                    Instantiate(_coinPrefab, position, Quaternion.identity);
+                    _activeCoins++;
+                }
             }
             yield return null;
         }
@@ -47,6 +56,41 @@ public class CoinManager : MonoBehaviour
     private Vector3 GeneratePosition()
     {
         return new Vector3(Random.Range(-_mapSize, _mapSize), 1.5f, Random.Range(-_mapSize, _mapSize));
+    }
+
+    private void Update()
+    {
+
+        if (MenuManager.GameActive == true)
+        {
+            time += Time.deltaTime;
+
+            if (time > 1)
+            {
+                Progress.Instance.AddScore(1);
+                amountScore.text = Progress.Instance.Score.ToString();
+                time = 0;
+
+                if (Progress.Instance.BestScore < Progress.Instance.Score)
+                {
+                    Progress.Instance.BestScore = Progress.Instance.Score;
+                    Progress.Instance.SaveBestScore(Progress.Instance.BestScore);
+                    bestScore.text = "Лучший: " + Progress.Instance.BestScore.ToString();
+                }
+            }
+        }
+
+        else
+        {
+            if(Progress.Instance.BestScore < Progress.Instance.Score)
+            {
+                Progress.Instance.BestScore = Progress.Instance.Score;
+                Progress.Instance.SaveBestScore(Progress.Instance.BestScore);
+                bestScore.text = Progress.Instance.BestScore.ToString();
+            }
+            Progress.Instance.Score = 0;
+            amountScore.text = Progress.Instance.Score.ToString();
+        }
     }
 
     public void CollectCoin()

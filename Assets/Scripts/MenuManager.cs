@@ -36,6 +36,5 @@ public class MenuManager : MonoBehaviour
     {
         GameActive = false;
         MenuUI.SetActive(true);
-        //Instantiate(Player, transform.position, Quaternion.identity);
     }
 }
