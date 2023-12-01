@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5269517693489528107
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 394ff57e6222f6a49b8053a8947975ff, type: 3}
+      propertyPath: m_Name
+      value: tree 2.0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 394ff57e6222f6a49b8053a8947975ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.930098
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 394ff57e6222f6a49b8053a8947975ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 394ff57e6222f6a49b8053a8947975ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.7595768
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 394ff57e6222f6a49b8053a8947975ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 394ff57e6222f6a49b8053a8947975ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 394ff57e6222f6a49b8053a8947975ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 394ff57e6222f6a49b8053a8947975ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 394ff57e6222f6a49b8053a8947975ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 394ff57e6222f6a49b8053a8947975ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 394ff57e6222f6a49b8053a8947975ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 394ff57e6222f6a49b8053a8947975ff, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5418a01c9b92ddc478ee4d8813f1d56b, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 394ff57e6222f6a49b8053a8947975ff,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 468472343357462521}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 394ff57e6222f6a49b8053a8947975ff,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8491269104226309657}
+  m_SourcePrefab: {fileID: 100100000, guid: 394ff57e6222f6a49b8053a8947975ff, type: 3}
+--- !u!1 &5269517693489625995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 394ff57e6222f6a49b8053a8947975ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 5269517693489528107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &468472343357462521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5269517693489625995}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.60491943, y: 6.786148, z: 0.6545961}
+  m_Center: {x: -0.011170387, y: 3.0930738, z: 0.00000011920929}
+--- !u!114 &8491269104226309657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5269517693489625995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fe202297bcab64585e73c5958a263d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

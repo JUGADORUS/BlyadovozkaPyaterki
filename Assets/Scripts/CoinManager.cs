@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class CoinManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CoinManager : MonoBehaviour
 
     [SerializeField] private float timerMin;
     [SerializeField] private float timerMax;
+    [SerializeField] private TMP_Text amountCoins;
 
     public static CoinManager Instance;
 
@@ -22,6 +24,7 @@ public class CoinManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SpawnCoins());
+        amountCoins.text = Progress.Instance.Coins.ToString();
     }
 
     IEnumerator SpawnCoins()
@@ -49,5 +52,7 @@ public class CoinManager : MonoBehaviour
     public void CollectCoin()
     {
         _activeCoins--;
+        Progress.Instance.AddCoins(1);
+        amountCoins.text = Progress.Instance.Coins.ToString();
     }
 }
