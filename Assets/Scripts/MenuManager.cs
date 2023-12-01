@@ -36,5 +36,6 @@ public class MenuManager : MonoBehaviour
     {
         GameActive = false;
         MenuUI.SetActive(true);
+        //BreakableObject.Instance.TurnOnBreakableObjects();
     }
 }

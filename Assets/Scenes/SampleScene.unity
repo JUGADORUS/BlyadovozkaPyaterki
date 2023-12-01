@@ -6755,7 +6755,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!4 &1355441164 stripped
 Transform:
@@ -7522,6 +7522,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 9c6178fe943216540b276b975dafae16,
     type: 3}
   m_PrefabInstance: {fileID: 1544396547}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1554244822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 363025940278517486, guid: eb1a3f979ef5c8743a26ef5a30ec6511,
+    type: 3}
+  m_PrefabInstance: {fileID: 2071721394}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1572556718
 PrefabInstance:
@@ -10108,7 +10114,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 363025940278517486, guid: eb1a3f979ef5c8743a26ef5a30ec6511,
+        type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 2071721404}
   m_SourcePrefab: {fileID: 100100000, guid: eb1a3f979ef5c8743a26ef5a30ec6511, type: 3}
 --- !u!4 &2071721395 stripped
 Transform:
@@ -10116,6 +10126,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2071721394}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2071721404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554244822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e49a6a42fa83b40b6740e72cae00b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2078825203
 PrefabInstance:
   m_ObjectHideFlags: 0
