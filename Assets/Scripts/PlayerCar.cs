@@ -1,10 +1,14 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Car : MonoBehaviour
+public class PlayerCar : Car
 {
     [SerializeField] private Transform _carTransform;
     [SerializeField] private Transform _visualTransform;
     [SerializeField] private Rigidbody _carRigidbody;
+    [SerializeField] private CarPrefabs _carPrefabs;
+    [SerializeField] private Transform _visualParent;
+    
 
     private float _speed = 15f;
 
@@ -14,7 +18,7 @@ public class Car : MonoBehaviour
     public float _carRotation = 0f; //œŒÃ≈ÕﬂÀ Õ¿ œ¿¡À» 
     public float _visualRotation = 0f;
 
-    public static Car Instance;
+    public static PlayerCar Instance;
 
     private void Awake()
     {
@@ -37,6 +41,7 @@ public class Car : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
+        SetupCurrentCar(indexOfCurrentCar.GetIndexOfCurrentCar());
     }
 
     void Update()
@@ -79,4 +84,10 @@ public class Car : MonoBehaviour
             CoinsCollected += 1;
         }
     }
+    private void SetupCurrentCar(int Index)
+    {
+        GameObject currentCar = _carPrefabs.GetCarPrefab((CarType)Index);
+        Instantiate(currentCar, _visualParent);
+    }
+
 }

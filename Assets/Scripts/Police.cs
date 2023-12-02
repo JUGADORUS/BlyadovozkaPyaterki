@@ -20,9 +20,9 @@ public class Police : MonoBehaviour
     {
         policeCar = GetComponent<Rigidbody>();
 
-        if (target == null && Car.Instance.gameObject != null)
+        if (target == null && PlayerCar.Instance.gameObject != null)
         {
-            target = Car.Instance.gameObject;
+            target = PlayerCar.Instance.gameObject;
             return;
         }
     }

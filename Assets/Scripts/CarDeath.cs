@@ -33,7 +33,7 @@ public class CarDeath : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.GetComponent<Car>())
+        if (collision.gameObject.GetComponent<PlayerCar>())
         {
             Die();
         }
@@ -41,10 +41,10 @@ public class CarDeath : MonoBehaviour
 
     private void Die()
     {
-        if (gameObject.GetComponent<Car>())
+        if (gameObject.GetComponent<PlayerCar>())
         {
-            Car.Instance._carRotation = 0;
-            Car.Instance._visualRotation = 0;
+            PlayerCar.Instance._carRotation = 0;
+            PlayerCar.Instance._visualRotation = 0;
 
             MenuManager.Instance.TurnOnMenu();
             Health = 3;
