@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] public GameObject MenuUI;
     public static bool GameActive;
     public static MenuManager Instance;
-    [SerializeField] private Car Player;
+    [SerializeField] private PlayerCar Player;
 
     private void Start()
     {

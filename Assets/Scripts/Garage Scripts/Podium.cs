@@ -6,7 +6,7 @@ public class Podium : MonoBehaviour
 {
     private float _rotationAmount = 60f;
     private float _currentRotation = 0f;
-    private int _currentIndex = 0;
+    public int _currentIndex = 0;
 
     [SerializeField] private Transform _podium;
     [SerializeField] private AnimationCurve _rotationCurve;
@@ -24,7 +24,7 @@ public class Podium : MonoBehaviour
         _currentIndex--;
         if (_currentIndex < 0)
         {
-            _currentIndex = 6;
+            _currentIndex = 5;
         }
 
     }
@@ -37,7 +37,7 @@ public class Podium : MonoBehaviour
         _rightButton.interactable = false;
         _leftButton.interactable = false;
         _currentIndex++;
-        if (_currentIndex > 6)
+        if (_currentIndex > 5)
         {
             _currentIndex = 0;
         }

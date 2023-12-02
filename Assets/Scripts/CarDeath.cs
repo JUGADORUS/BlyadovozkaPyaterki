@@ -35,7 +35,7 @@ public class CarDeath : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.GetComponent<Car>())
+        if (collision.gameObject.GetComponent<PlayerCar>())
         {
             Die();
         }
@@ -43,7 +43,7 @@ public class CarDeath : MonoBehaviour
 
     private void Die()
     {
-        if (gameObject.GetComponent<Car>())
+        if (gameObject.GetComponent<PlayerCar>())
         {
             Instantiate(_dieEffect, transform.position, Quaternion.identity);
             StartCoroutine(GoBack());
@@ -57,14 +57,14 @@ public class CarDeath : MonoBehaviour
     {
         Debug.Log("maksim lox");
         GetComponent<Rigidbody>().isKinematic = true;
-        Vector3 scale = Car.Instance.transform.localScale;
-        Car.Instance.transform.localScale = Vector3.zero;
+        Vector3 scale = PlayerCar.Instance.transform.localScale;
+        PlayerCar.Instance.transform.localScale = Vector3.zero;
         yield return new WaitForSeconds(2);
         GetComponent<Rigidbody>().isKinematic = false;
-        Car.Instance.transform.localScale = scale;
+        PlayerCar.Instance.transform.localScale = scale;
 
-        Car.Instance._carRotation = 0;
-        Car.Instance._visualRotation = 0;
+        PlayerCar.Instance._carRotation = 0;
+        PlayerCar.Instance._visualRotation = 0;
 
         MenuManager.Instance.TurnOnMenu();
         Health = 3;
