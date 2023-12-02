@@ -12,10 +12,15 @@ public class PlayerCar : Car
 
     private float _speed = 15f;
 
-    [SerializeField] private float _deltaCarRotation = 90f;
-    [SerializeField] private float _deltaVisualRotation = 45f;
+    [SerializeField] private float _deltaCarRotation = 115f;
+    [SerializeField] private float _deltaVisualRotation = 35f;
 
-    public float _carRotation = 0f; //œŒÃ≈ÕﬂÀ Õ¿ œ¿¡À» 
+    [SerializeField] private ParticleSystem _leftSmoke;
+    [SerializeField] private ParticleSystem _rightSmoke;
+    private TrailRenderer _leftTrail;
+    private TrailRenderer _rightTrail;
+
+    public float _carRotation = 0f;
     public float _visualRotation = 0f;
 
     public static PlayerCar Instance;
@@ -30,6 +35,8 @@ public class PlayerCar : Car
         {
             Destroy(gameObject);
         }
+        _leftTrail = _leftSmoke.gameObject.GetComponent<TrailRenderer>();
+        _rightTrail = _rightSmoke.gameObject.GetComponent<TrailRenderer>();
     }
 
     public int CoinsCollected = 0;
@@ -46,7 +53,6 @@ public class PlayerCar : Car
 
     void Update()
     {
-
         if (MenuManager.GameActive == true)
         {
             if (Input.GetKey(KeyCode.A))
@@ -54,16 +60,28 @@ public class PlayerCar : Car
                 if (_visualRotation > 0) _visualRotation *= 0.99f;
                 _carRotation -= _deltaCarRotation * Time.deltaTime;
                 _visualRotation -= _deltaVisualRotation * Time.deltaTime;
+                _leftSmoke.Play();
+                _rightSmoke.Play();
+                _leftTrail.emitting = true;
+                _rightTrail.emitting = true;
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 if (_visualRotation < 0) _visualRotation *= 0.99f;
                 _carRotation += _deltaCarRotation * Time.deltaTime;
                 _visualRotation += _deltaVisualRotation * Time.deltaTime;
+                _leftSmoke.Play();
+                _rightSmoke.Play();
+                _leftTrail.emitting = true;
+                _rightTrail.emitting = true;
             }
             else
             {
                 _visualRotation *= 0.95f;
+                _leftSmoke.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                _rightSmoke.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                _leftTrail.emitting = false;
+                _rightTrail.emitting = false;
             }
             _visualRotation = Mathf.Clamp(_visualRotation, -60f, 60f);
 
