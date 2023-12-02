@@ -3188,6 +3188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 3
+  _dieEffect: {fileID: 2398608829508964987, guid: f387ac791007951459ed6a93dfa675bf,
+    type: 3}
 --- !u!114 &758540728
 MonoBehaviour:
   m_ObjectHideFlags: 0

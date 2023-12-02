@@ -63,5 +63,9 @@ public class Police : MonoBehaviour
             policeCar.angularVelocity = rotatingSpeed * value * new Vector3(0, 1, 0);
             policeCar.velocity = transform.forward * speed;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

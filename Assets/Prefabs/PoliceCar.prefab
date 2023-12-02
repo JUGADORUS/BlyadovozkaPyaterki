@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 2
+  _dieEffect: {fileID: 2398608829508964987, guid: f387ac791007951459ed6a93dfa675bf,
+    type: 3}
 --- !u!1001 &126198853121071919
 PrefabInstance:
   m_ObjectHideFlags: 0

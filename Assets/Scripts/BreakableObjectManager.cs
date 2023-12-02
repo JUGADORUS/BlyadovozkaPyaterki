@@ -22,6 +22,7 @@ public class BreakableObjectManager : MonoBehaviour
     {
         for (int i = 0; i < Instance.breakableObjects.Count; i++)
         {
+            Debug.Log("break222");
             Instance.breakableObjects[i].SetActive(true);
         }
     }
