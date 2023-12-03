@@ -15,5 +15,6 @@ public class GetCurrentCar : MonoBehaviour
         int indexOfCurrentCar;
         indexOfCurrentCar = _podium._currentIndex;
         StaticData.valueToKeep = indexOfCurrentCar;
+        SceneManager.LoadScene(0);
     }
 }

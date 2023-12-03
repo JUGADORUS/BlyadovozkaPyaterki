@@ -60,20 +60,28 @@ public class PlayerCar : Car
                 if (_visualRotation > 0) _visualRotation *= 0.99f;
                 _carRotation -= _deltaCarRotation * Time.deltaTime;
                 _visualRotation -= _deltaVisualRotation * Time.deltaTime;
-                _leftSmoke.Play();
-                _rightSmoke.Play();
-                _leftTrail.emitting = true;
-                _rightTrail.emitting = true;
+
+                if (_visualRotation < -30)
+                {
+                    _leftTrail.emitting = true;
+                    _rightTrail.emitting = true;
+                     _leftSmoke.Play();
+                     _rightSmoke.Play();
+                }
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 if (_visualRotation < 0) _visualRotation *= 0.99f;
                 _carRotation += _deltaCarRotation * Time.deltaTime;
                 _visualRotation += _deltaVisualRotation * Time.deltaTime;
-                _leftSmoke.Play();
-                _rightSmoke.Play();
-                _leftTrail.emitting = true;
-                _rightTrail.emitting = true;
+                
+                if (_visualRotation > 30)
+                {
+                    _leftTrail.emitting = true;
+                    _rightTrail.emitting = true;
+                     _leftSmoke.Play();
+                     _rightSmoke.Play();
+                }
             }
             else
             {

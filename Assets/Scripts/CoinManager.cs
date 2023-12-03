@@ -14,6 +14,7 @@ public class CoinManager : MonoBehaviour
     [SerializeField] private TMP_Text amountCoins;
     [SerializeField] private TMP_Text amountScore;
     [SerializeField] private TMP_Text bestScore;
+    //[SerializeField] private TMP_Text amountHP;
 
     public static CoinManager Instance;
 
@@ -30,6 +31,7 @@ public class CoinManager : MonoBehaviour
         StartCoroutine(SpawnCoins());
         amountCoins.text = Progress.Instance.Coins.ToString();
         amountScore.text = Progress.Instance.Score.ToString();
+        //amountHP.text = CarDeath.Health.ToString();
         bestScore.text = "Лучший: " + Progress.Instance.BestScore.ToString();
     }
 

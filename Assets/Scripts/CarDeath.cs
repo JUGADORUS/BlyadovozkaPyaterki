@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarDeath : MonoBehaviour
 {
-    public int Health = 3;
+    public static int Health = 3;
     [SerializeField] private GameObject _dieEffect;
 
     private void OnCollisionEnter(Collision collision)
@@ -45,6 +45,7 @@ public class CarDeath : MonoBehaviour
     {
         if (gameObject.GetComponent<PlayerCar>())
         {
+            Debug.Log(Health);
             Instantiate(_dieEffect, transform.position, Quaternion.identity);
             StartCoroutine(GoBack());
             return;
