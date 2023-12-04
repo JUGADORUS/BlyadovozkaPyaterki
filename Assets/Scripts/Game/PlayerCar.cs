@@ -6,7 +6,7 @@ public class PlayerCar : Car
     [SerializeField] private Transform _carTransform;
     [SerializeField] private Transform _visualTransform;
     [SerializeField] private Rigidbody _carRigidbody;
-    [SerializeField] private CarPrefabs _carPrefabs;
+    [SerializeField] private CarData _carPrefabs;
     [SerializeField] private Transform _visualParent;
     
 
@@ -113,7 +113,7 @@ public class PlayerCar : Car
     }
     private void SetupCurrentCar(int Index)
     {
-        GameObject currentCar = _carPrefabs.GetCarPrefab((CarType)Index);
+        GameObject currentCar = _carPrefabs.GetCarData((CarType)Index).CarPrefab;
         Instantiate(currentCar, _visualParent);
     }
 

@@ -29,10 +29,10 @@ public class CoinManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SpawnCoins());
-        amountCoins.text = Progress.Instance.Coins.ToString();
-        amountScore.text = Progress.Instance.Score.ToString();
+        amountCoins.text = Progress.Instance.Data.Coins.ToString();
+        amountScore.text = Progress.Instance.Data.Score.ToString();
         amountHP.text = PlayerCar.Instance.Health.ToString();
-        bestScore.text = "Ëó÷øèé: " + Progress.Instance.BestScore.ToString();
+        bestScore.text = "Ëó÷øèé: " + Progress.Instance.Data.BestScore.ToString();
     }
 
     IEnumerator SpawnCoins()
@@ -70,28 +70,28 @@ public class CoinManager : MonoBehaviour
             if (time > 1)
             {
                 Progress.Instance.AddScore(1);
-                amountScore.text = Progress.Instance.Score.ToString();
+                amountScore.text = Progress.Instance.Data.Score.ToString();
                 time = 0;
 
-                if (Progress.Instance.BestScore < Progress.Instance.Score)
+                if (Progress.Instance.Data.BestScore < Progress.Instance.Data.Score)
                 {
-                    Progress.Instance.BestScore = Progress.Instance.Score;
-                    Progress.Instance.SaveBestScore(Progress.Instance.BestScore);
-                    bestScore.text = "Ëó÷øèé: " + Progress.Instance.BestScore.ToString();
+                    Progress.Instance.Data.BestScore = Progress.Instance.Data.Score;
+                    Progress.Instance.SaveBestScore(Progress.Instance.Data.BestScore);
+                    bestScore.text = "Ëó÷øèé: " + Progress.Instance.Data.BestScore.ToString();
                 }
             }
         }
 
         else
         {
-            if(Progress.Instance.BestScore < Progress.Instance.Score)
+            if(Progress.Instance.Data.BestScore < Progress.Instance.Data.Score)
             {
-                Progress.Instance.BestScore = Progress.Instance.Score;
-                Progress.Instance.SaveBestScore(Progress.Instance.BestScore);
-                bestScore.text = Progress.Instance.BestScore.ToString();
+                Progress.Instance.Data.BestScore = Progress.Instance.Data.Score;
+                Progress.Instance.SaveBestScore(Progress.Instance.Data.BestScore);
+                bestScore.text = Progress.Instance.Data.BestScore.ToString();
             }
-            Progress.Instance.Score = 0;
-            amountScore.text = Progress.Instance.Score.ToString();
+            Progress.Instance.Data.Score = 0;
+            amountScore.text = Progress.Instance.Data.Score.ToString();
         }
     }
 
@@ -99,6 +99,6 @@ public class CoinManager : MonoBehaviour
     {
         _activeCoins--;
         Progress.Instance.AddCoins(1);
-        amountCoins.text = Progress.Instance.Coins.ToString();
+        amountCoins.text = Progress.Instance.Data.Coins.ToString();
     }
 }
