@@ -8,6 +8,12 @@ public class Podium : MonoBehaviour
     private float _currentRotation = 0f;
     public int _currentIndex = 0;
 
+    private bool carOneHasBought = false;
+    private bool carTwoHasBought = false;
+    private bool carThreeHasBought = false;
+    private bool carFourHasBought = false;
+    private bool carFiveHasBought = false;
+
     [SerializeField] private Transform _podium;
     [SerializeField] private AnimationCurve _rotationCurve;
     [SerializeField] private Button _leftButton;

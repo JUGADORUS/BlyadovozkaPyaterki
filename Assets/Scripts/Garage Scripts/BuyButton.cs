@@ -23,4 +23,14 @@ public class BuyButton : MonoBehaviour
     {
         ConfirmButton.SetActive(true);
     }
+
+    public void TurnOffBuyCarButton()
+    {
+        BuyCarButton.SetActive(false);
+    }
+
+    public void TurnOffConfirmButton()
+    {
+        ConfirmButton.SetActive(false);
+    }
 }

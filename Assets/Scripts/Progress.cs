@@ -8,6 +8,12 @@ public class ProgressData
     public int Score;
     public int Coins;
     public int BestScore;
+
+    public bool RafikUnlocked = true;
+    public bool NissanGTRUnlocked = false;
+    public bool TaycanUnlocked = false;
+    public bool GelikUnlocked = false;
+    public bool CyberTruckUnlocked = false;
 }
 
 public class Progress : MonoBehaviour
