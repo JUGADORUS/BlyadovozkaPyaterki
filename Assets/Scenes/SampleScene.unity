@@ -5777,6 +5777,7 @@ MonoBehaviour:
   _rightSmoke: {fileID: 2123578093}
   _carRotation: 0
   _visualRotation: 0
+  Health: 3
   CoinsCollected: 0
 --- !u!4 &407046333
 Transform:
@@ -37967,6 +37968,7 @@ MonoBehaviour:
   amountCoins: {fileID: 947364433}
   amountScore: {fileID: 878388170}
   bestScore: {fileID: 1785361663}
+  amountHP: {fileID: 1007924644}
 --- !u!1 &2117103013
 GameObject:
   m_ObjectHideFlags: 0

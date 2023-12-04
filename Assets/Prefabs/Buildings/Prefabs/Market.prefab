@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5386855424984931285}
   - component: {fileID: 9038214152448103536}
   - component: {fileID: 6524265241071788218}
-  - component: {fileID: 553966989489042403}
   - component: {fileID: 2661016182410512212}
   - component: {fileID: 2200027975747798336}
   - component: {fileID: 5061531617231681666}
@@ -20,6 +19,7 @@ GameObject:
   - component: {fileID: 597266041008432666}
   - component: {fileID: 4815525668721612135}
   - component: {fileID: 2229299567768616264}
+  - component: {fileID: 4219406782223271959}
   m_Layer: 0
   m_Name: Market
   m_TagString: Untagged
@@ -92,18 +92,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &553966989489042403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4722627683411591535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01fe202297bcab64585e73c5958a263d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2661016182410512212
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -272,3 +260,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.161913, y: 10.057005, z: 0.45172215}
   m_Center: {x: 8.673224, y: 5.022092, z: 6.559482}
+--- !u!114 &4219406782223271959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722627683411591535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e49a6a42fa83b40b6740e72cae00b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

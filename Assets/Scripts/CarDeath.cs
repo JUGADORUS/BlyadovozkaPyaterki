@@ -16,22 +16,47 @@ public class CarDeath : MonoBehaviour
 
         if (collision.gameObject.GetComponent<BreakableObject>())
         {
-            Health--;
-
-            if(Health <= 0)
+            if (gameObject.GetComponent<PlayerCar>())
             {
-               Die();
+                PlayerCar.Instance.Health--;
+                CoinManager.Instance.amountHP.text = PlayerCar.Instance.Health.ToString();
+
+                if (PlayerCar.Instance.Health <= 0)
+                {
+                    Die();
+                }
+            }
+            else
+            {
+                Health--;
+
+                if (Health <= 0)
+                {
+                    Die();
+                }
             }
         }
 
         if (collision.gameObject.GetComponent<Police>())
         {
-            Health--;
-
-            if (Health <= 0)
+            if (gameObject.GetComponent<PlayerCar>())
             {
-                Instantiate(_dieEffect, transform.position, Quaternion.identity);
-                Die();
+                PlayerCar.Instance.Health--;
+                CoinManager.Instance.amountHP.text = PlayerCar.Instance.Health.ToString();
+
+                if (PlayerCar.Instance.Health <= 0)
+                {
+                    Die();
+                }
+            }
+            else
+            {
+                Health--;
+
+                if (Health <= 0)
+                {
+                    Die();
+                }
             }
         }
 
@@ -45,34 +70,35 @@ public class CarDeath : MonoBehaviour
     {
         if (gameObject.GetComponent<PlayerCar>())
         {
-            Debug.Log(Health);
             Instantiate(_dieEffect, transform.position, Quaternion.identity);
             StartCoroutine(GoBack());
             return;
         }
+
         Destroy(gameObject);
         Instantiate(_dieEffect, transform.position, Quaternion.identity);
     }
 
     IEnumerator GoBack()
     {
-        Debug.Log("maksim lox");
         GetComponent<Rigidbody>().isKinematic = true;
-        Vector3 scale = PlayerCar.Instance.transform.localScale;
         PlayerCar.Instance.transform.localScale = Vector3.zero;
         yield return new WaitForSeconds(2);
         GetComponent<Rigidbody>().isKinematic = false;
-        PlayerCar.Instance.transform.localScale = scale;
+        PlayerCar.Instance.transform.localScale = Vector3.one;
 
         PlayerCar.Instance._carRotation = 0;
         PlayerCar.Instance._visualRotation = 0;
+        PlayerCar.Instance.Health = 3;
 
-        MenuManager.Instance.TurnOnMenu();
         Health = 3;
+        CoinManager.Instance.amountHP.text = PlayerCar.Instance.Health.ToString();
 
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         transform.position = MenuManager.Instance.transform.position;
         transform.rotation = MenuManager.Instance.transform.rotation;
+
+        MenuManager.Instance.TurnOnMenu();
     }
 }

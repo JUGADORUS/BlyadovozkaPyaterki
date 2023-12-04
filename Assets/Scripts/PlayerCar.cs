@@ -22,6 +22,7 @@ public class PlayerCar : Car
 
     public float _carRotation = 0f;
     public float _visualRotation = 0f;
+    public int Health = 3;
 
     public static PlayerCar Instance;
 
