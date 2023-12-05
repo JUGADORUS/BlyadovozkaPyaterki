@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] private Coin _healthPrefab;
+    [SerializeField] private Health _healthPrefab;
     [SerializeField] private float _mapSize;
 
     [SerializeField] private float timerMinHealth;
@@ -54,8 +54,7 @@ public class HealthManager : MonoBehaviour
     public void CollectHealth()
     {
         _activeHealth--;
-        Progress.Instance.AddCoins(1);
-        CoinManager.Instance.amountHP.text = Progress.Instance.Data.Coins.ToString();
         PlayerCar.Instance.Health++;
+        CoinManager.Instance.amountHP.text = PlayerCar.Instance.Health.ToString();
     }
 }

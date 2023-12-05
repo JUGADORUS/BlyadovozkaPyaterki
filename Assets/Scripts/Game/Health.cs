@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private GameObject CoinCollectEffect;
+    [SerializeField] private GameObject HealthCollectEffect;
     public void Collect()
     {
-        CoinManager.Instance.CollectCoin();
-        Instantiate(CoinCollectEffect, transform.position, Quaternion.identity);
+        if (PlayerCar.Instance.Health <= 2)
+        {
+            HealthManager.Instance.CollectHealth();
+        }
+
+        Instantiate(HealthCollectEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

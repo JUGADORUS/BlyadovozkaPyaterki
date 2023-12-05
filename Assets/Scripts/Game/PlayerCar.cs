@@ -110,6 +110,10 @@ public class PlayerCar : Car
             coin.Collect();
             CoinsCollected += 1;
         }
+        if (other.gameObject.GetComponent<Health>() is Health health)
+        {
+            health.Collect();
+        }
     }
     private void SetupCurrentCar(int Index)
     {
