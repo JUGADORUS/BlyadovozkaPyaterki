@@ -33,3 +33,7 @@ MonoBehaviour:
     CarPrefab: {fileID: 7356947919933906933, guid: 9dd7822bc79077740912f6f10ac90324,
       type: 3}
     Cost: 100
+  - CarType: 3
+    CarPrefab: {fileID: 3519139245988694529, guid: 92f587013030f5f4ea318f777ec49b2f,
+      type: 3}
+    Cost: 25

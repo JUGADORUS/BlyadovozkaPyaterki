@@ -68,7 +68,12 @@ public class Podium : MonoBehaviour
 
     public void UpdateButtons()
     {
-        bool isUnlocked = Progress.Instance.Data.IsCarUnlocked(_currentIndex);
+        bool isUnlocked = false;
+        if (Progress.Instance.Data.IsCarUnlocked(_currentIndex))
+        {
+            isUnlocked = Progress.Instance.Data.IsCarUnlocked(_currentIndex);
+        }
+        
         _confirm.gameObject.SetActive(isUnlocked);
         BuyButton.Instance.gameObject.SetActive(!isUnlocked);
     }
