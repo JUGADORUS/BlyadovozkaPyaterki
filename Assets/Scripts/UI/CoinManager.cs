@@ -9,8 +9,8 @@ public class CoinManager : MonoBehaviour
 
     private int _activeCoins = 0;
 
-    [SerializeField] private float timerMin;
-    [SerializeField] private float timerMax;
+    [SerializeField] private float timerMinCoins;
+    [SerializeField] private float timerMaxCoins;
     [SerializeField] private TMP_Text amountCoins;
     [SerializeField] private TMP_Text amountScore;
     [SerializeField] private TMP_Text bestScore;
@@ -43,11 +43,12 @@ public class CoinManager : MonoBehaviour
             {
                 if (MenuManager.GameActive == true)
                 {
-                    float wait = Random.Range(timerMin, timerMax);
-                    yield return new WaitForSeconds(wait);
-                    Vector3 position = GeneratePosition();
-                    while (Physics.CheckSphere(position, 0.75f)) position = GeneratePosition();
-                    Instantiate(_coinPrefab, position, Quaternion.identity);
+                    //Монеты
+                    float waitCoins = Random.Range(timerMinCoins, timerMaxCoins);
+                    yield return new WaitForSeconds(waitCoins);
+                    Vector3 coinPosition = GeneratePosition();
+                    while (Physics.CheckSphere(coinPosition, 0.75f)) coinPosition = GeneratePosition();
+                    Instantiate(_coinPrefab, coinPosition, Quaternion.identity);
                     _activeCoins++;
                 }
             }

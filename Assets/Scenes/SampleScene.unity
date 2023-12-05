@@ -17941,6 +17941,7 @@ Transform:
   - {fileID: 91193022}
   - {fileID: 2117023217}
   - {fileID: 891921228}
+  - {fileID: 1292828659}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1177662306 stripped
@@ -19644,6 +19645,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1452721769}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1292828658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1292828659}
+  - component: {fileID: 1292828660}
+  m_Layer: 0
+  m_Name: HealthManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1292828659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292828658}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1177375304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1292828660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292828658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe600f878581b2e4bb88114cf8c47ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthPrefab: {fileID: 0}
+  _mapSize: 100
+  timerMinHealth: 18
+  timerMaxHealth: 25
 --- !u!1001 &1294178169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33000,9 +33049,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cca6a87fe5aef04282a2970b056f933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: 0
-  Coins: 0
-  BestScore: 0
+  Data:
+    CarsUnlockedDefault: 010000000000
+    Score: 0
+    Coins: 0
+    BestScore: 0
+    CarsUnlocked: 
 --- !u!4 &1811556162
 Transform:
   m_ObjectHideFlags: 0
@@ -37964,8 +38016,8 @@ MonoBehaviour:
   _coinPrefab: {fileID: 7885495996201919910, guid: cb9842f5f2d9e454d9015fb891c3b960,
     type: 3}
   _mapSize: 100
-  timerMin: 3
-  timerMax: 10
+  timerMinCoins: 0
+  timerMaxCoins: 0
   amountCoins: {fileID: 947364433}
   amountScore: {fileID: 878388170}
   bestScore: {fileID: 1785361663}
