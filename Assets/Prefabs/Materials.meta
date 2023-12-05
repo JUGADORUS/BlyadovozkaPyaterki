@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Materials.meta
 guid: 9aea793e52bf6294293800512d0f3db6
 folderAsset: yes
+=======
+guid: 744b51eecebb7174b8e3bbfd37d0976a
+>>>>>>> hpzero:Assets/Scenes/Garage-hpzero.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
