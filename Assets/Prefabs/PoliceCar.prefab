@@ -48,8 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcf13ab55d4bc4449f039135cc74a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15.5
-  rotatingSpeed: 4
+  rotatingSpeed: 3.5
   _visualTransform: {fileID: 126198853120672179}
   _deltaVisualRotation: 45
 --- !u!54 &6951915570162283395
@@ -112,7 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c655f3955adbc44bdaa07f171d27ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 2
   _dieEffect: {fileID: 2398608829508964987, guid: f387ac791007951459ed6a93dfa675bf,
     type: 3}
 --- !u!1001 &126198853121071919

@@ -10,32 +10,44 @@ public class TimerForPolice : MonoBehaviour
     private float SecondSpeed = 16.6f;
     private float ThirdSpeed = 16.9f;
     private float FourthSpeed = 17.2f;
+    private float FifthSpeed = 17.8f;
 
     private void FixedUpdate()
     {
         if (MenuManager.GameActive == true)
         {
             timer += Time.deltaTime;
-            Debug.Log(timer);
-            if (timer > 30 && timer < 32)
+            if (timer > 30 && timer < 31)
             {
                 Debug.Log("newSpeed");
-                Police.Instance.speed = FirstSpeed;
+                Police.speed = FirstSpeed;
+                PoliceSpawner.minTime = 9f;
+                PoliceSpawner.maxTime = 11f;
             }
-            if (timer > 50 && timer < 52)
+            if (timer > 50 && timer < 51)
             {
                 Debug.Log("newSpeed");
-                Police.Instance.speed = SecondSpeed;
+                Police.speed = SecondSpeed;
+                PoliceSpawner.minTime = 8f;
+                PoliceSpawner.maxTime = 10f;
             }
-            if (timer > 80 && timer < 82)
+            if (timer > 80 && timer < 81)
             {
                 Debug.Log("newSpeed");
-                Police.Instance.speed = ThirdSpeed;
+                Police.speed = ThirdSpeed;
+                PoliceSpawner.minTime = 7f;
+                PoliceSpawner.maxTime = 9f;
             }
-            if (timer > 110 && timer < 112)
+            if (timer > 110 && timer < 111)
             {
                 Debug.Log("newSpeed");
-                Police.Instance.speed = FourthSpeed;
+                Police.speed = FourthSpeed;
+                PoliceSpawner.minTime = 6f;
+                PoliceSpawner.maxTime = 8f;
+            }
+            if (timer > 111)
+            {
+                Police.speed = FifthSpeed;
             }
         }
     }

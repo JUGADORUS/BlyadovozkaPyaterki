@@ -6,6 +6,8 @@ public class PoliceSpawner : MonoBehaviour
 {
     [SerializeField] private Police PoliceCar;
     float time = 0;
+    public static float minTime = 10f;
+    public static float maxTime = 12f;
 
     private void FixedUpdate()
     {
@@ -13,7 +15,7 @@ public class PoliceSpawner : MonoBehaviour
         {
             time += Time.deltaTime;
 
-            if (time > 10f)
+            if (time > Random.Range(minTime, maxTime))
             {
                 Instantiate(PoliceCar, transform.position, Quaternion.identity);
                 time = 0f;

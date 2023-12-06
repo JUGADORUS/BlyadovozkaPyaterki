@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Police : MonoBehaviour
 {
-    [SerializeField] public float speed = 16;
+    [SerializeField] public static float speed = 16;
     [SerializeField] private float rotatingSpeed = 8;
 
     private GameObject target;
@@ -14,14 +14,15 @@ public class Police : MonoBehaviour
     private float _visualRotation = 0f;
     [SerializeField] private float _deltaVisualRotation = 45f;
 
-    public static Police Instance;
-
     Vector3 driftAngle = new Vector3(0, 1.6f , 0);
     
+
+
     private void Awake()
-    {
+    {   
         policeCar = GetComponent<Rigidbody>();
         Debug.Log(speed);
+
         if (target == null && PlayerCar.Instance.gameObject != null)
         {
             target = PlayerCar.Instance.gameObject;
