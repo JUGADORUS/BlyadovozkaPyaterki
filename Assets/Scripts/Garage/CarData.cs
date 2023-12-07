@@ -6,6 +6,8 @@ public class CarDataEntry
     public CarType CarType;
     public GameObject CarPrefab;
     public int Cost;
+    public float Speed;
+    public int Health;
 }
 
 [CreateAssetMenu]

@@ -8,9 +8,9 @@ public class PlayerCar : Car
     [SerializeField] private Rigidbody _carRigidbody;
     [SerializeField] private CarData _carPrefabs;
     [SerializeField] private Transform _visualParent;
-    
 
-    private float _speed = 15f;
+
+    [SerializeField] public float _speed = 15f;
 
     [SerializeField] private float _deltaCarRotation = 115f;
     [SerializeField] private float _deltaVisualRotation = 35f;

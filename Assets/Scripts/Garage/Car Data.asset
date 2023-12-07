@@ -17,19 +17,29 @@ MonoBehaviour:
     CarPrefab: {fileID: 86382354288918137, guid: 7c45f5f51977c7047af3df16b846bf0d,
       type: 3}
     Cost: 0
+    Speed: 15
+    Health: 3
   - CarType: 1
     CarPrefab: {fileID: 6011922704172754167, guid: c4dc29d3a7b3f534983cc7a52b652648,
       type: 3}
     Cost: 120
+    Speed: 15.5
+    Health: 4
   - CarType: 2
     CarPrefab: {fileID: 5356778133444770131, guid: a691b7053e226074daa9ffd4d72e9099,
       type: 3}
     Cost: 69
+    Speed: 15.3
+    Health: 4
   - CarType: 4
     CarPrefab: {fileID: 5199926369323013833, guid: 68c1c5f8cda550e4dbef59a85ecbbde4,
       type: 3}
     Cost: 75
+    Speed: 15.1
+    Health: 3
   - CarType: 5
     CarPrefab: {fileID: 7356947919933906933, guid: 9dd7822bc79077740912f6f10ac90324,
       type: 3}
     Cost: 100
+    Speed: 15.2
+    Health: 5
