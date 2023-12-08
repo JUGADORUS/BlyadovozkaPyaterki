@@ -10,7 +10,7 @@ public class PlayerCar : Car
     [SerializeField] private Transform _visualParent;
 
 
-    [SerializeField] public float _speed = 15f;
+    [SerializeField] public float _speed = Progress.Instance.GetSpeed(Podium.Instance._currentIndex);
 
     [SerializeField] private float _deltaCarRotation = 115f;
     [SerializeField] private float _deltaVisualRotation = 35f;
@@ -38,6 +38,7 @@ public class PlayerCar : Car
         }
         _leftTrail = _leftSmoke.gameObject.GetComponent<TrailRenderer>();
         _rightTrail = _rightSmoke.gameObject.GetComponent<TrailRenderer>();
+        _speed = Progress.Instance.GetSpeed(Podium.Instance._currentIndex);
     }
 
     public int CoinsCollected = 0;
@@ -96,6 +97,7 @@ public class PlayerCar : Car
 
             Vector3 speed;
 
+            Debug.Log(_speed);
             speed = transform.forward * _speed;
             _carRigidbody.velocity = speed;
             _carTransform.localEulerAngles = new Vector3(0, _carRotation, 0);

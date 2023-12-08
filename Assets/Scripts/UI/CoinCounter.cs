@@ -24,6 +24,10 @@ public class CoinCounter : MonoBehaviour
     public void UpdateCounter()
     {
         amountCoins.text = Progress.Instance.Data.Coins.ToString();
-        amountHP.text = PlayerCar.Instance.Health.ToString();
+
+        if (amountHP != null)
+        {
+            amountHP.text = PlayerCar.Instance.Health.ToString();
+        }
     }
 }

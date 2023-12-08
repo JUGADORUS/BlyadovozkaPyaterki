@@ -14,6 +14,8 @@ public class Podium : MonoBehaviour
     [SerializeField] private Button _leftButton;
     [SerializeField] private Button _rightButton;
     [SerializeField] private Button _confirm;
+    [SerializeField] private Button _improveHealth;
+    [SerializeField] private Button _improveSpeed;
 
     public static Podium Instance;
 
@@ -27,7 +29,14 @@ public class Podium : MonoBehaviour
     {
         bool isUnlocked = Progress.Instance.Data.IsCarUnlocked(_currentIndex);
         _confirm.gameObject.SetActive(isUnlocked);
+        _improveHealth.gameObject.SetActive(isUnlocked);
+        _improveSpeed.gameObject.SetActive(isUnlocked);
         BuyButton.Instance.gameObject.SetActive(!isUnlocked);
+    }
+
+    public int GetIndex()
+    {
+        return (int)((CarType)_currentIndex);
     }
 
     public void RotateCircleToLeft()
@@ -38,6 +47,8 @@ public class Podium : MonoBehaviour
         _leftButton.interactable = false;
         _rightButton.interactable = false;
         BuyButton.Instance.UpdateCost((CarType) _currentIndex);
+        ImproveHealth.Instance.UpdateHealthCharacteristics((CarType)_currentIndex);
+        ImproveSpeed.Instance.UpdateSpeedCharacteristics((CarType)_currentIndex);
     }
 
     public void RotateCircleToRight()
@@ -48,6 +59,8 @@ public class Podium : MonoBehaviour
         _rightButton.interactable = false;
         _leftButton.interactable = false;
         BuyButton.Instance.UpdateCost((CarType)_currentIndex);
+        ImproveHealth.Instance.UpdateHealthCharacteristics((CarType)_currentIndex);
+        ImproveSpeed.Instance.UpdateSpeedCharacteristics((CarType)_currentIndex);
     }
 
     private IEnumerator RotationCircle(float rotationAmount)
@@ -73,9 +86,15 @@ public class Podium : MonoBehaviour
         {
             isUnlocked = Progress.Instance.Data.IsCarUnlocked(_currentIndex);
         }
-        
+
+        _improveSpeed.gameObject.SetActive(isUnlocked);
+        _improveHealth.gameObject.SetActive(isUnlocked);
         _confirm.gameObject.SetActive(isUnlocked);
         BuyButton.Instance.gameObject.SetActive(!isUnlocked);
+        ImproveSpeed.Instance.gameObject.SetActive(isUnlocked);
+        ImproveHealth.Instance.gameObject.SetActive(isUnlocked);
+        ImproveHealth.Instance.UpdateHealthCharacteristics((CarType)_currentIndex);
+        ImproveSpeed.Instance.UpdateSpeedCharacteristics((CarType)_currentIndex);
     }
 }
 
