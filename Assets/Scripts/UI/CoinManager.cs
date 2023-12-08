@@ -31,12 +31,17 @@ public class CoinManager : MonoBehaviour
         StartCoroutine(SpawnCoins());
         amountCoins.text = Progress.Instance.Data.Coins.ToString();
         amountScore.text = Progress.Instance.Data.Score.ToString();
-        amountHP.text = PlayerCar.Instance.Health.ToString();
+        Debug.Log(PlayerCar.Instance.maxHealth.ToString());
         Debug.Log("in coinmanager");
         bestScore.text = "Лучший: " + Progress.Instance.Data.BestScore.ToString();
     }
 
-    IEnumerator SpawnCoins()
+    public void ShowHP()
+    {
+        amountHP.text = PlayerCar.Instance.maxHealth.ToString();
+    }
+
+        IEnumerator SpawnCoins()
     {
         while (true)
         {

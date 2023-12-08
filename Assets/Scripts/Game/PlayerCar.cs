@@ -23,6 +23,7 @@ public class PlayerCar : Car
     public float _carRotation = 0f;
     public float _visualRotation = 0f;
     public int Health = 1;
+    public int maxHealth;
 
     public static PlayerCar Instance;
 
@@ -52,7 +53,9 @@ public class PlayerCar : Car
         SetupCurrentCar(indexOfCurrentCar.GetIndexOfCurrentCar());
         _speed = Progress.Instance.GetSpeed(indexOfCurrentCar.GetIndexOfCurrentCar());
         Health = Progress.Instance.GetHealth(indexOfCurrentCar.GetIndexOfCurrentCar());
+        maxHealth = Health;
         Debug.Log("in playercar");
+        CoinManager.Instance.ShowHP();
     }
 
     void Update()

@@ -81,7 +81,7 @@ public class CarDeath : MonoBehaviour
 
     IEnumerator GoBack()
     {
-        PlayerCar.Instance.Health = 3;
+        PlayerCar.Instance.Health = PlayerCar.Instance.maxHealth;
         GetComponent<Rigidbody>().isKinematic = true;
         PlayerCar.Instance.transform.localScale = Vector3.zero;
         yield return new WaitForSeconds(2);
@@ -96,7 +96,7 @@ public class CarDeath : MonoBehaviour
         transform.position = MenuManager.Instance.transform.position;
         transform.rotation = MenuManager.Instance.transform.rotation;
 
-        PlayerCar.Instance.Health = 3;
+        PlayerCar.Instance.Health = PlayerCar.Instance.maxHealth;
         CoinManager.Instance.amountHP.text = PlayerCar.Instance.Health.ToString();
 
         MenuManager.Instance.TurnOnMenu();
