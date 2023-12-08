@@ -10,7 +10,7 @@ public class PlayerCar : Car
     [SerializeField] private Transform _visualParent;
 
 
-    [SerializeField] public float _speed = Progress.Instance.GetSpeed(Podium.Instance._currentIndex);
+    [SerializeField] public float _speed = 0;
 
     [SerializeField] private float _deltaCarRotation = 115f;
     [SerializeField] private float _deltaVisualRotation = 35f;
@@ -38,7 +38,6 @@ public class PlayerCar : Car
         }
         _leftTrail = _leftSmoke.gameObject.GetComponent<TrailRenderer>();
         _rightTrail = _rightSmoke.gameObject.GetComponent<TrailRenderer>();
-        _speed = Progress.Instance.GetSpeed(Podium.Instance._currentIndex);
     }
 
     public int CoinsCollected = 0;
@@ -51,6 +50,7 @@ public class PlayerCar : Car
             Cursor.lockState = CursorLockMode.Locked;
         }
         SetupCurrentCar(indexOfCurrentCar.GetIndexOfCurrentCar());
+        _speed = Progress.Instance.GetSpeed(indexOfCurrentCar.GetIndexOfCurrentCar());
     }
 
     void Update()
