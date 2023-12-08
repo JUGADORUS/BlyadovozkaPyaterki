@@ -32,6 +32,7 @@ public class CoinManager : MonoBehaviour
         amountCoins.text = Progress.Instance.Data.Coins.ToString();
         amountScore.text = Progress.Instance.Data.Score.ToString();
         amountHP.text = PlayerCar.Instance.Health.ToString();
+        Debug.Log("in coinmanager");
         bestScore.text = "Лучший: " + Progress.Instance.Data.BestScore.ToString();
     }
 
