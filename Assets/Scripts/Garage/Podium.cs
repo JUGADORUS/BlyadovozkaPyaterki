@@ -65,6 +65,8 @@ public class Podium : MonoBehaviour
 
     private IEnumerator RotationCircle(float rotationAmount)
     {
+        ImproveHealth.Instance._maxHealth.gameObject.SetActive(false);
+        ImproveSpeed.Instance._maxSpeed.gameObject.SetActive(false);
         UpdateButtons();
         for (float i = 0f; i <= 1f; i += Time.deltaTime)
         {

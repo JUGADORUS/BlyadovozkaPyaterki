@@ -102,7 +102,6 @@ public class PlayerCar : Car
 
             Vector3 speed;
 
-            Debug.Log(_speed);
             speed = transform.forward * _speed;
             _carRigidbody.velocity = speed;
             _carTransform.localEulerAngles = new Vector3(0, _carRotation, 0);
