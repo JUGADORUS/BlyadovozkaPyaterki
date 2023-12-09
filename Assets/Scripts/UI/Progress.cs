@@ -91,6 +91,11 @@ public class Progress : MonoBehaviour
         Save();
     }
 
+    public void SaveMoneyAfterPromo()
+    {
+        Save();
+    }
+
     public int GetHealth(int carIndex)
     {
         return Data.Health[carIndex];
