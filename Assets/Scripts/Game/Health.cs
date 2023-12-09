@@ -5,7 +5,7 @@ public class Health : MonoBehaviour
     [SerializeField] private GameObject HealthCollectEffect;
     public void Collect()
     {
-        if (PlayerCar.Instance.Health <= 2)
+        if (PlayerCar.Instance.Health <= PlayerCar.Instance.maxHealth)
         {
             HealthManager.Instance.CollectHealth();
         }
