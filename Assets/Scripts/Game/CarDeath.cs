@@ -75,7 +75,11 @@ public class CarDeath : MonoBehaviour
         if (gameObject.GetComponent<PlayerCar>())
         {
             Instantiate(_dieEffect, transform.position, Quaternion.identity);
-            ShowFullscreenAdv();
+            if (TimerForAdv.timeInGame >= 120)
+            {
+                ShowFullscreenAdv();
+                TimerForAdv.timeInGame = 0;
+            }
             StartCoroutine(GoBack());
             return;
         }
