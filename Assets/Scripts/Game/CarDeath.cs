@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 public class CarDeath : MonoBehaviour
 {
     public static int Health = 3;
     [SerializeField] private GameObject _dieEffect;
+
+    [DllImport("__Internal")]
+    private static extern void ShowFullscreenAdv();
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -71,6 +75,7 @@ public class CarDeath : MonoBehaviour
         if (gameObject.GetComponent<PlayerCar>())
         {
             Instantiate(_dieEffect, transform.position, Quaternion.identity);
+            ShowFullscreenAdv();
             StartCoroutine(GoBack());
             return;
         }

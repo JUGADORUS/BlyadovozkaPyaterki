@@ -11007,7 +11007,7 @@ MonoBehaviour:
   _carPrefabs: {fileID: 11400000, guid: 2e8e349334cbb0341bc2f46e6ba5488b, type: 2}
   _visualParent: {fileID: 1069722802}
   _speed: 15
-  _deltaCarRotation: 125
+  _deltaCarRotation: 135
   _deltaVisualRotation: 35
   _leftSmoke: {fileID: 536312089}
   _rightSmoke: {fileID: 104509190}
@@ -32975,8 +32975,8 @@ MonoBehaviour:
   _coinPrefab: {fileID: 7885495996201919910, guid: cb9842f5f2d9e454d9015fb891c3b960,
     type: 3}
   _mapSize: 100
-  timerMinCoins: 8
-  timerMaxCoins: 14
+  timerMinCoins: 5
+  timerMaxCoins: 10
   amountCoins: {fileID: 609920494}
   amountScore: {fileID: 431177376}
   bestScore: {fileID: 1935083570}

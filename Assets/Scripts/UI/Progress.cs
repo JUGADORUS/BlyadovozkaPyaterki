@@ -86,7 +86,7 @@ public class Progress : MonoBehaviour
 
     public void SpeedUp(int carIndex)
     {
-        Data.Speed[carIndex] = Mathf.Round((Data.Speed[carIndex] + 0.2f) * 10.0f) * 0.1f;
+        Data.Speed[carIndex] = Mathf.Round((Data.Speed[carIndex] + 0.1f) * 10.0f) * 0.1f;
         //Debug.Log(Data.Speed[carIndex]);
         Save();
     }

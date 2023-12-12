@@ -7,10 +7,10 @@ public class TimerForPolice : MonoBehaviour
     private float timer = 0;
 
     private float FirstSpeed = 16.3f;
-    private float SecondSpeed = 16.6f;
-    private float ThirdSpeed = 16.9f;
-    private float FourthSpeed = 17.2f;
-    private float FifthSpeed = 18f;
+    private float SecondSpeed = 16.8f;
+    private float ThirdSpeed = 17f;
+    private float FourthSpeed = 18f;
+    private float FifthSpeed = 18.2f;
 
     private void FixedUpdate()
     {

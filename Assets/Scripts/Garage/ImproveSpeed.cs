@@ -28,7 +28,7 @@ public class ImproveSpeed : MonoBehaviour
     {
         if (Progress.Instance.Data.Coins >= 5)
         {
-            if (_speed < 23f)
+            if (_speed < 18f)
             {
                 Progress.Instance.Data.Coins -= 5;
                 Progress.Instance.SpeedUp(_carIndex);
@@ -41,7 +41,7 @@ public class ImproveSpeed : MonoBehaviour
             {
                 _maxSpeed.gameObject.SetActive(true);
             }
-        }
+        } 
         Debug.Log(_speed);
     }
 
