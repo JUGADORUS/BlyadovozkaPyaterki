@@ -3794,17 +3794,17 @@ PrefabInstance:
     - target: {fileID: 6351609792970292813, guid: c4dc29d3a7b3f534983cc7a52b652648,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.121
+      value: 5.120999
       objectReference: {fileID: 0}
     - target: {fileID: 6351609792970292813, guid: c4dc29d3a7b3f534983cc7a52b652648,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.66
+      value: 0.6600006
       objectReference: {fileID: 0}
     - target: {fileID: 6351609792970292813, guid: c4dc29d3a7b3f534983cc7a52b652648,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.786
+      value: -2.786002
       objectReference: {fileID: 0}
     - target: {fileID: 6351609792970292813, guid: c4dc29d3a7b3f534983cc7a52b652648,
         type: 3}
@@ -3916,12 +3916,12 @@ Transform:
   - {fileID: 441082823}
   - {fileID: 1994948232}
   - {fileID: 926307802}
-  - {fileID: 1325882877}
-  - {fileID: 2128779195}
+  - {fileID: 2021465579}
   - {fileID: 1860195778}
+  - {fileID: 2128779195}
+  - {fileID: 1325882877}
   - {fileID: 512488091}
   - {fileID: 1012836464}
-  - {fileID: 2021465579}
   m_Father: {fileID: 2025001676}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1992104319
@@ -4631,6 +4631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _podium: {fileID: 2025001677}
+  _source: {fileID: 0}
 --- !u!1 &2106316631
 GameObject:
   m_ObjectHideFlags: 0
