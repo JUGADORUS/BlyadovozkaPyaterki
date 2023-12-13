@@ -7,5 +7,5 @@ public class BreakableObject : MonoBehaviour
     {
         BreakableObjectManager.Instance.breakableObjects.Add(gameObject);
         gameObject.SetActive(false);
-    }
+    } 
 }
