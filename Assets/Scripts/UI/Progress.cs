@@ -9,16 +9,16 @@ public class ProgressData
     public int Score;
     public int Coins;
     public int BestScore;
-    public int[] Health = {3, 4, 4, 4, 3, 3};
-    public float[] Speed = {15f, 15.5f, 15.3f, 15.3f, 15.1f, 15f };
+    public int[] Health = {3, 5, 100, 6, 4, 5};
+    public float[] Speed = {15f, 16f, 18f, 17.5f,15.4f, 16.6f };
 
     public bool[] CarsUnlocked;
 
     public static ProgressData GetEmptyProgressData()
     {
         ProgressData data = new ProgressData();
-        data.Health = new int[] { 3, 4, 4, 4, 3, 3 };
-        data.Speed = new float[] { 15f, 15.5f, 15.3f, 15.3f, 15.1f, 15f };
+        data.Health = new int[] { 3, 5, 100, 6, 4, 5 };
+        data.Speed = new float[] {15f, 16f, 18f, 17.5f,15.4f, 16.6f };
         data.Score = 0;
         data.BestScore = 0;
         data.Coins = 0;

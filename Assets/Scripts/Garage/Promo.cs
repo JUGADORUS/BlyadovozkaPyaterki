@@ -10,10 +10,12 @@ public class Promo : MonoBehaviour
     {
         if(_InputField.text == _promo)
         {
+            _InputField.text = " ";
             Progress.Instance.Data.Coins += 1000;
             Podium.Instance.UpdateButtons();
             CoinCounter.Instance.UpdateCounter();
             Progress.Instance.SaveMoneyAfterPromo();
+            _promo = "dkfsjklfjweouifhsdjkfhuheuiyfwegfihwefweqwerty";
         }
     }
 }
