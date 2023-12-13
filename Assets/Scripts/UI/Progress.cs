@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 [System.Serializable]
 public class ProgressData
@@ -13,6 +14,9 @@ public class ProgressData
     public float[] Speed = {15f, 16f, 18f, 17.5f,15.4f, 16.6f };
 
     public bool[] CarsUnlocked;
+
+    //[DllImport("__Internal")]
+    //private static extern void SetLeaderBoard(int value);
 
     public static ProgressData GetEmptyProgressData()
     {
@@ -68,6 +72,7 @@ public class Progress : MonoBehaviour
     public void SaveBestScore(int bestScore)
     {
         Data.BestScore = bestScore;
+        //SetLeaderBoard(bestScore);
         Save();
     }
 

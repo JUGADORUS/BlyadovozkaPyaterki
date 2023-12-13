@@ -30,7 +30,15 @@
             .then(ysdk => {
                 console.log('Yandex SDK initialized');
                 window.ysdk = ysdk;
+                initLib();
             });
+
+        var lb;
+
+        function initLib() {
+            ysdk.getLeaderboards()
+                .then(_lb => lb = _lb);
+        }
     </script>
 
 

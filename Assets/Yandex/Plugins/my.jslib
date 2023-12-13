@@ -36,7 +36,7 @@ mergeInto(LibraryManager.library, {
 		var lb;
 		ysdk.getLeaderboards()
 		.then(lb => {
-			lb.setLeaderboardScore('LeaderBoard', score, player.getName());
+			lb.setLeaderboardScore('TimeLiving', score, player.getName());
 
 		})
 	}
