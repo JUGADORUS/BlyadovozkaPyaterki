@@ -20,6 +20,8 @@ public class PlayerCar : Car
     private TrailRenderer _leftTrail;
     private TrailRenderer _rightTrail;
 
+    [SerializeField] private AudioSource _drift;
+
     public float _carRotation = 0f;
     public float _visualRotation = 0f;
     public int Health = 1;
@@ -73,8 +75,12 @@ public class PlayerCar : Car
                 {
                     _leftTrail.emitting = true;
                     _rightTrail.emitting = true;
-                     _leftSmoke.Play();
-                     _rightSmoke.Play();
+                    _leftSmoke.Play();
+                    _rightSmoke.Play();
+                }
+                if (!_drift.isPlaying)
+                {
+                    _drift.Play();
                 }
             }
             else if (Input.GetKey(KeyCode.D))
@@ -88,8 +94,12 @@ public class PlayerCar : Car
                 {
                     _leftTrail.emitting = true;
                     _rightTrail.emitting = true;
-                     _leftSmoke.Play();
-                     _rightSmoke.Play();
+                    _leftSmoke.Play();
+                    _rightSmoke.Play();
+                }
+                if (!_drift.isPlaying)
+                {
+                    _drift.Play();
                 }
             }
             else
@@ -99,6 +109,7 @@ public class PlayerCar : Car
                 _rightSmoke.Stop(true, ParticleSystemStopBehavior.StopEmitting);
                 _leftTrail.emitting = false;
                 _rightTrail.emitting = false;
+                _drift.Stop();
             }
             _visualRotation = Mathf.Clamp(_visualRotation, -60f, 60f);
 
