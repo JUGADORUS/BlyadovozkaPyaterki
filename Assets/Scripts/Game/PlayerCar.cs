@@ -105,7 +105,7 @@ public class PlayerCar : Car
             Vector3 speed;
 
             speed = transform.forward * _speed;
-            _carRigidbody.velocity = speed;
+            if (!_carRigidbody.isKinematic) _carRigidbody.velocity = speed;
             _carTransform.localEulerAngles = new Vector3(0, _carRotation, 0);
             _visualTransform.localEulerAngles = new Vector3(0, _visualRotation, 0);
         }

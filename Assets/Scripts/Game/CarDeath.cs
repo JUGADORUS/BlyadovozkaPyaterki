@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
+using System;
 
 public class CarDeath : MonoBehaviour
 {
@@ -75,11 +76,15 @@ public class CarDeath : MonoBehaviour
         if (gameObject.GetComponent<PlayerCar>())
         {
             Instantiate(_dieEffect, transform.position, Quaternion.identity);
-            if (TimerForAdv.timeInGame >= 120)
+            try
             {
-                ShowFullscreenAdv();
-                TimerForAdv.timeInGame = 0;
+                if (TimerForAdv.timeInGame >= 120)
+                {
+                    ShowFullscreenAdv();
+                    TimerForAdv.timeInGame = 0;
+                }
             }
+            catch (EntryPointNotFoundException) { }
             StartCoroutine(GoBack());
             return;
         }
