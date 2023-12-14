@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Animations/Tips.anim.meta
 guid: aee5a30b4d03e94478ce38ea06e7a9d4
 NativeFormatImporter:
+=======
+guid: 8fc9aa37055233c4d8d01f72fb2f3705
+DefaultImporter:
+>>>>>>> hpzero:Assets/Scenes/SampleScene-hpzero.unity.meta
   externalObjects: {}
   mainObjectFileID: 7400000
   userData: 

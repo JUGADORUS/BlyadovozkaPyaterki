@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Animations/Tips.controller.meta
 guid: ff8a6f09e7e0fbf4e8eec59943179ab4
 NativeFormatImporter:
+=======
+guid: b178bd8d8fbd4324a937b27fc9fb365b
+folderAsset: yes
+DefaultImporter:
+>>>>>>> hpzero:Assets/Prefabs/CityObjects.meta
   externalObjects: {}
   mainObjectFileID: 9100000
   userData: 
