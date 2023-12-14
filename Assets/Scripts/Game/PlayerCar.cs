@@ -64,6 +64,7 @@ public class PlayerCar : Car
         {
             if (Input.GetKey(KeyCode.A))
             {
+                TipsHowToControl.Instance.TurnOffTips();
                 if (_visualRotation > 0) _visualRotation *= 0.99f;
                 _carRotation -= _deltaCarRotation * Time.deltaTime;
                 _visualRotation -= _deltaVisualRotation * Time.deltaTime;
@@ -78,6 +79,7 @@ public class PlayerCar : Car
             }
             else if (Input.GetKey(KeyCode.D))
             {
+                TipsHowToControl.Instance.TurnOffTips();
                 if (_visualRotation < 0) _visualRotation *= 0.99f;
                 _carRotation += _deltaCarRotation * Time.deltaTime;
                 _visualRotation += _deltaVisualRotation * Time.deltaTime;

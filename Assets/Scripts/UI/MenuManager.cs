@@ -29,6 +29,7 @@ public class MenuManager : MonoBehaviour
     {
         GameActive = true;
         MenuUI.SetActive(false);
+        TipsHowToControl.Instance.TurnOnTips();
     }
 
     public void TurnOnMenu()
