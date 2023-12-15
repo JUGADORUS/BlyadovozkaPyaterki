@@ -8,7 +8,7 @@ public class Promo : MonoBehaviour
 
     public void Ok()
     {
-        if(_InputField.text == _promo)
+        if (_InputField.text == _promo && BuildFlag.BuildValue == 69)
         {
             _InputField.text = " ";
             Progress.Instance.Data.Coins += 2000;
