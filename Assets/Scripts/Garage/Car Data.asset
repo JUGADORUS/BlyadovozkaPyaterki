@@ -26,7 +26,7 @@ MonoBehaviour:
     Speed: 16
     Health: 5
   - CarType: 2
-    CarPrefab: {fileID: 5356778133444770131, guid: a691b7053e226074daa9ffd4d72e9099,
+    CarPrefab: {fileID: 3283314437601045092, guid: 1cb58173c1419e44cbde9e2fdfd7f179,
       type: 3}
     Cost: 777
     Speed: 18

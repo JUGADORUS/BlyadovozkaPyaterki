@@ -4,7 +4,7 @@ public enum CarType
 {
     Rafik = 0, 
     NissanGTR = 1,
-    Taycan = 2,
+    Limousine = 2,
     Hlamidia = 3,
     Gelik = 4,
     Cybertrack = 5

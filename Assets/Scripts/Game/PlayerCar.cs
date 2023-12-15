@@ -8,7 +8,10 @@ public class PlayerCar : Car
     [SerializeField] private Rigidbody _carRigidbody;
     [SerializeField] private CarData _carPrefabs;
     [SerializeField] private Transform _visualParent;
-
+    [SerializeField] private GameObject _otherCarData;
+    [SerializeField] private GameObject _limousineData;
+    [SerializeField] private ParticleSystem _limousineLeftSmoke;
+    [SerializeField] private ParticleSystem _limousineRightSmoke;
 
     [SerializeField] public float _speed = 0;
 
@@ -19,8 +22,10 @@ public class PlayerCar : Car
     [SerializeField] private ParticleSystem _rightSmoke;
     private TrailRenderer _leftTrail;
     private TrailRenderer _rightTrail;
+    private ParticleSystem _currentLeftSmoke ;
+    private ParticleSystem _currentRightSmoke;
 
-    [SerializeField] private AudioSource _drift;
+[SerializeField] private AudioSource _drift;
 
     public float _carRotation = 0f;
     public float _visualRotation = 0f;
@@ -52,12 +57,25 @@ public class PlayerCar : Car
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-        SetupCurrentCar(indexOfCurrentCar.GetIndexOfCurrentCar());
+        int currentCar = indexOfCurrentCar.GetIndexOfCurrentCar();
+        SetupCurrentCar(currentCar);
         _speed = Progress.Instance.GetSpeed(indexOfCurrentCar.GetIndexOfCurrentCar());
         Health = Progress.Instance.GetHealth(indexOfCurrentCar.GetIndexOfCurrentCar());
         maxHealth = Health;
         Debug.Log("in playercar");
         CoinManager.Instance.ShowHP();
+        if (currentCar == 2)
+        {
+            _otherCarData.SetActive(false);
+            _limousineData.SetActive(true);
+            _currentLeftSmoke = _limousineLeftSmoke;
+            _currentRightSmoke = _limousineRightSmoke;
+        }
+        else
+        {
+             _currentLeftSmoke = _leftSmoke;
+             _currentRightSmoke = _rightSmoke;
+        }
     }
 
     void Update()
@@ -75,8 +93,8 @@ public class PlayerCar : Car
                 {
                     _leftTrail.emitting = true;
                     _rightTrail.emitting = true;
-                    _leftSmoke.Play();
-                    _rightSmoke.Play();
+                    _currentLeftSmoke.Play();
+                    _currentRightSmoke.Play();
                 }
                 if (!_drift.isPlaying)
                 {
@@ -94,8 +112,8 @@ public class PlayerCar : Car
                 {
                     _leftTrail.emitting = true;
                     _rightTrail.emitting = true;
-                    _leftSmoke.Play();
-                    _rightSmoke.Play();
+                    _currentLeftSmoke.Play();
+                    _currentRightSmoke.Play();
                 }
                 if (!_drift.isPlaying)
                 {
@@ -105,8 +123,8 @@ public class PlayerCar : Car
             else
             {
                 _visualRotation *= 0.95f;
-                _leftSmoke.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-                _rightSmoke.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                _currentLeftSmoke.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                _currentRightSmoke.Stop(true, ParticleSystemStopBehavior.StopEmitting);
                 _leftTrail.emitting = false;
                 _rightTrail.emitting = false;
                 _drift.Stop();
