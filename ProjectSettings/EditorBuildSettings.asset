@@ -13,5 +13,8 @@ EditorBuildSettings:
     guid: f3b3eb4bd332a7846b8dd5e742731bc8
   - enabled: 1
     path: Assets/Scenes/Garage.unity
+    guid: 472f66fb8bb4e4146bed2a47438f4e5d
+  - enabled: 0
+    path: Assets/Scenes/GaragePyaterka.unity
     guid: d772d86924132f941869505ce9adf233
   m_configObjects: {}

@@ -42,4 +42,14 @@ public class MusicManager : MonoBehaviour
     {
         _pickSound.Play();
     }
+
+    public void Pause()
+    {
+        _source.Pause();
+    }
+    
+    public void Unpause()
+    {
+        _source.UnPause();
+    }
 }
