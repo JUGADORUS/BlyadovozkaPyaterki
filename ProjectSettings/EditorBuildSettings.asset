@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Scenes/GamePyaterka.unity
+    guid: f3b3eb4bd332a7846b8dd5e742731bc8
   - enabled: 1
     path: Assets/Scenes/Garage.unity
     guid: d772d86924132f941869505ce9adf233
