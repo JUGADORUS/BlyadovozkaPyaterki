@@ -22,30 +22,30 @@ MonoBehaviour:
   - CarType: 1
     CarPrefab: {fileID: 6011922704172754167, guid: c4dc29d3a7b3f534983cc7a52b652648,
       type: 3}
-    Cost: 120
+    Cost: 50
     Speed: 16
     Health: 5
   - CarType: 2
     CarPrefab: {fileID: 3283314437601045092, guid: 1cb58173c1419e44cbde9e2fdfd7f179,
       type: 3}
-    Cost: 777
+    Cost: 175
     Speed: 18
     Health: 100
   - CarType: 3
     CarPrefab: {fileID: 3519139245988694529, guid: 92f587013030f5f4ea318f777ec49b2f,
       type: 3}
-    Cost: 696
+    Cost: 120
     Speed: 17.5
     Health: 6
   - CarType: 4
     CarPrefab: {fileID: 5199926369323013833, guid: 68c1c5f8cda550e4dbef59a85ecbbde4,
       type: 3}
-    Cost: 75
+    Cost: 35
     Speed: 15.4
     Health: 4
   - CarType: 5
     CarPrefab: {fileID: 7356947919933906933, guid: 9dd7822bc79077740912f6f10ac90324,
       type: 3}
-    Cost: 100
+    Cost: 65
     Speed: 16.6
     Health: 5

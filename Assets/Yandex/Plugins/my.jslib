@@ -1,21 +1,23 @@
 mergeInto(LibraryManager.library, {
 
     Hello: function () {
-        window.alert("Hello, world!");
-        console.log("Hello, world!");
+        window.alert('Hello, world!');
+        console.log('Hello, world!');
     },
 
     ShowFullscreenAdv: function () {
         ysdk.adv.showFullscreenAdv({
             callbacks: {
                 onClose: function (wasShown) {
-                    gameInstance.SendMessage("MusicManager", "Unpause");
+                    console.log('Ad closed');
+                    gameInstance.SendMessage('Listener', 'Unmute');
                 },
                 onError: function (error) {
                     // some action on error
                 },
-				onOpen: function () {
-                    gameInstance.SendMessage("MusicManager", "Pause");
+                onOpen: function () {
+                    console.log('Ad opened');
+                    gameInstance.SendMessage('Listener', 'Mute');
                 }
             }
         })
@@ -29,6 +31,7 @@ mergeInto(LibraryManager.library, {
         stringToUTF8(returnStr, buffer, bufferSize);
         return buffer;
     },
+
     SetLeaderBoard: function (score) {
         var player;
         ysdk.getPlayer().then(_player => {

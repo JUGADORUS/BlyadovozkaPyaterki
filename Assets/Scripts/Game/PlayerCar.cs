@@ -62,7 +62,6 @@ public class PlayerCar : Car
         _speed = Progress.Instance.GetSpeed(indexOfCurrentCar.GetIndexOfCurrentCar());
         Health = Progress.Instance.GetHealth(indexOfCurrentCar.GetIndexOfCurrentCar());
         maxHealth = Health;
-        Debug.Log("in playercar");
         CoinManager.Instance.ShowHP();
         if (currentCar == 2)
         {

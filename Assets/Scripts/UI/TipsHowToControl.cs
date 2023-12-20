@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TipsHowToControl : MonoBehaviour
 {
-    [SerializeField] private GameObject ADButton;
+    [SerializeField] private GameObject IngameTips;
 
     public static TipsHowToControl Instance;
 
@@ -16,16 +16,16 @@ public class TipsHowToControl : MonoBehaviour
 
     void Start()
     {
-        ADButton.SetActive(false);
+        IngameTips.SetActive(false);
     }
 
     public void TurnOnTips()
     {
-        ADButton.SetActive(true);
+        IngameTips.SetActive(true);
     }
 
     public void TurnOffTips()
     {
-        ADButton.SetActive(false);
+        IngameTips.SetActive(false);
     }
 }

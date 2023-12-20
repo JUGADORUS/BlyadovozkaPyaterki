@@ -9,13 +9,11 @@ public class CarDeath : MonoBehaviour
     public static int Health = 3;
     [SerializeField] private GameObject _dieEffect;
 
-    [DllImport("__Internal")]
-    private static extern void ShowFullscreenAdv();
-
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.GetComponent<UnbreakableObject>())
         {
+            if (gameObject.GetComponent<PlayerCar>()) Vignette.Instance.Flash();
             Die();
         }
 
@@ -25,7 +23,7 @@ public class CarDeath : MonoBehaviour
             {
                 PlayerCar.Instance.Health--;
                 CoinManager.Instance.amountHP.text = PlayerCar.Instance.Health.ToString();
-
+                Vignette.Instance.Flash();
                 if (PlayerCar.Instance.Health <= 0)
                 {
                     Die();
@@ -48,7 +46,7 @@ public class CarDeath : MonoBehaviour
             {
                 PlayerCar.Instance.Health--;
                 CoinManager.Instance.amountHP.text = PlayerCar.Instance.Health.ToString();
-
+                Vignette.Instance.Flash();
                 if (PlayerCar.Instance.Health <= 0)
                 {
                     Die();
@@ -76,15 +74,6 @@ public class CarDeath : MonoBehaviour
         if (gameObject.GetComponent<PlayerCar>())
         {
             Instantiate(_dieEffect, transform.position, Quaternion.identity);
-            try
-            {
-                if (TimerForAdv.timeInGame >= 120)
-                {
-                    ShowFullscreenAdv();
-                    TimerForAdv.timeInGame = 0;
-                }
-            }
-            catch (EntryPointNotFoundException) { }
             StartCoroutine(GoBack());
             return;
         }
@@ -114,5 +103,7 @@ public class CarDeath : MonoBehaviour
         CoinManager.Instance.amountHP.text = PlayerCar.Instance.Health.ToString();
 
         MenuManager.Instance.TurnOnMenu();
+
+        AdvManager.Instance.QueueAd();
     }
 }
