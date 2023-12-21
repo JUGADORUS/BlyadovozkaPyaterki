@@ -103,7 +103,5 @@ public class CarDeath : MonoBehaviour
         CoinManager.Instance.amountHP.text = PlayerCar.Instance.Health.ToString();
 
         MenuManager.Instance.TurnOnMenu();
-
-        AdvManager.Instance.QueueAd();
     }
 }

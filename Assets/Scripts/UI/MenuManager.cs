@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour
@@ -15,18 +13,18 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
+    public void RequestStart()
+    {
+        AdvManager.Instance.QueueAd();
     }
 
     public void StartGame()
     {
+        AudioManager.Instance.Unmute();
         GameActive = true;
         MenuUI.SetActive(false);
         TipsHowToControl.Instance.TurnOnTips();

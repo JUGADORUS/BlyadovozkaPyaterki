@@ -1,10 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioListener _listener;
+
+    public static AudioManager Instance;
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
 
     [ContextMenu("Mute")]
     public void Mute()

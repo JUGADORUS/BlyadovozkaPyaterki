@@ -10,7 +10,7 @@ mergeInto(LibraryManager.library, {
             callbacks: {
                 onClose: function (wasShown) {
                     console.log('Ad closed');
-                    gameInstance.SendMessage('Listener', 'Unmute');
+                    gameInstance.SendMessage('MenuManager', 'StartGame');
                 },
                 onError: function (error) {
                     // some action on error

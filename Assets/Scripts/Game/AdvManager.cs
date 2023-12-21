@@ -29,8 +29,14 @@ public class AdvManager : MonoBehaviour
                 ShowFullscreenAdv();
                 _adTimer = 0;
             }
+            else
+            {
+                MenuManager.Instance.StartGame();
+            }
         }
-        catch (EntryPointNotFoundException) { }
+        catch (EntryPointNotFoundException) {
+            MenuManager.Instance.StartGame();
+        }
         _adQueued = false;
     }
 
