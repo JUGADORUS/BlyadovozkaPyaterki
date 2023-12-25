@@ -81,7 +81,7 @@ public class PlayerCar : Car
     {
         if (MenuManager.GameActive == true)
         {
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || LeftButtonPressed.Instance.buttonPressed == true)
             {
                 TipsHowToControl.Instance.TurnOffTips();
                 if (_visualRotation > 0) _visualRotation *= 0.99f;
@@ -100,7 +100,7 @@ public class PlayerCar : Car
                     _drift.Play();
                 }
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || RightButtonPressed.Instance.buttonPressed == true)
             {
                 TipsHowToControl.Instance.TurnOffTips();
                 if (_visualRotation < 0) _visualRotation *= 0.99f;
